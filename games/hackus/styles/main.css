@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #111;
+  color: #eee;
+  font-family: Arial, sans-serif;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.rules-panel {
+  width: 320px;
+  flex-shrink: 0;
+  background: #161616;
+  border-right: 1px solid #2b2b2b;
+  padding: 24px 18px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.rules-panel h2 {
+  margin: 0 0 18px;
+}
+
+.rule-block {
+  margin-bottom: 20px;
+}
+
+.rule-block h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #9fd89f;
+}
+
+.rule-block ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #ccc;
+}
+
+.rule-block li {
+  margin-bottom: 6px;
+}
+
+.game-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px 16px;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0 0 12px;
+}
+
+.controls {
+  margin: 10px 0;
+  text-align: center;
+}
+
+button {
+  margin: 4px;
+  padding: 8px 12px;
+  background: #222;
+  color: #eee;
+  border: 1px solid #444;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #333;
+}
+
+input[type="number"] {
+  width: 64px;
+  margin: 0 10px 0 6px;
+  padding: 6px 8px;
+  background: #1e1e1e;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+label {
+  color: #ddd;
+}
+
+canvas {
+  border: 1px solid #444;
+  background: #000;
+  display: block;
+  margin-top: 6px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-right: 8px;
+  color: #9ecbff;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.legend {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+.f {
+  background: #ff4d6d;
+}
+
+.passiveF {
+  background: #ff9bb0;
+}
+
+.expansiveF {
+  background: #ff1744;
+}
+
+.m {
+  background: #3a86ff;
+}
+
+.passiveM {
+  background: #8fbaff;
+}
+
+.expansiveM {
+  background: #1e90ff;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hyper Automata Cellular Kernel Universe System</title>
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
+<body>
+  <div class="page">
+    <aside class="rules-panel">
+      <h2>Rules</h2>
+
+      <div class="rule-block">
+        <h3>Cell Types</h3>
+        <ul>
+          <li><span class="legend swatch f"></span> F = Female</li>
+          <li><span class="legend swatch passiveF"></span> PassiveF = Passive Female</li>
+          <li><span class="legend swatch expansiveF"></span> ExpansiveF = Expansive Female</li>
+          <li><span class="legend swatch m"></span> M = Male</li>
+          <li><span class="legend swatch passiveM"></span> PassiveM = Passive Male</li>
+          <li><span class="legend swatch expansiveM"></span> ExpansiveM = Expansive Male</li>
+        </ul>
+      </div>
+
+      <div class="rule-block">
+        <h3>Survival</h3>
+        <ul>
+          <li>Fewer than 2 neighbors → dies</li>
+          <li>2 or 3 neighbors → survives</li>
+          <li>More than 3 neighbors → dies</li>
+        </ul>
+      </div>
+
+      <div class="rule-block">
+        <h3>Birth</h3>
+        <ul>
+          <li>F + M → 1 new cell</li>
+          <li>ExpansiveF + M or F + ExpansiveM → 2 new cells</li>
+          <li>ExpansiveF + ExpansiveM → 4 new cells</li>
+          <li>Expansive births expand outward if nearby dead cells are not enough</li>
+        </ul>
+      </div>
+
+      <div class="rule-block">
+        <h3>Modifiers</h3>
+        <ul>
+          <li>PassiveF and PassiveM do not participate in reproduction</li>
+          <li>Percentages are applied separately by sex</li>
+          <li>Passive % + Expansive % for each sex must be ≤ 100</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="game-panel">
+      <h1>Hyper Automata Cellular Kernel Universe System</h1>
+
+      <div class="controls">
+        <a class="back-link" href="../../index.html">← Back</a>
+        <button id="startPauseBtn">Start</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div class="controls">
+        <label for="passiveFemalesPercent">Passive females %</label>
+        <input id="passiveFemalesPercent" type="number" min="0" max="100" value="5" />
+
+        <label for="passiveMalesPercent">Passive males %</label>
+        <input id="passiveMalesPercent" type="number" min="0" max="100" value="5" />
+      </div>
+
+      <div class="controls">
+        <label for="expansiveFemalesPercent">Expansive females %</label>
+        <input id="expansiveFemalesPercent" type="number" min="0" max="100" value="5" />
+
+        <label for="expansiveMalesPercent">Expansive males %</label>
+        <input id="expansiveMalesPercent" type="number" min="0" max="100" value="5" />
+      </div>
+
+      <div class="controls">
+        <span id="generation">Generation: 0</span>
+      </div>
+
+      <canvas id="gameCanvas"></canvas>
+    </main>
+  </div>
+
+  <script type="module" src="./src/game.js"></script>
+</body>
+</html>

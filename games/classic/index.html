@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classic Game of Life</title>
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
+<body>
+  <div class="page">
+    <aside class="rules-panel">
+      <h2>Rules</h2>
+
+      <div class="rule-block">
+        <h3>Survival</h3>
+        <ul>
+          <li>Fewer than 2 neighbors → dies</li>
+          <li>2 or 3 neighbors → survives</li>
+          <li>More than 3 neighbors → dies</li>
+        </ul>
+      </div>
+
+      <div class="rule-block">
+        <h3>Birth</h3>
+        <ul>
+          <li>Dead cell with exactly 3 neighbors → becomes alive</li>
+        </ul>
+      </div>
+
+      <div class="rule-block">
+        <h3>Simulation</h3>
+        <ul>
+          <li>Generation counter increases every step</li>
+          <li>Stops automatically when a state repeats</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="game-panel">
+      <h1>Classic Game of Life</h1>
+
+      <div class="controls">
+        <a class="back-link" href="../../index.html">← Back</a>
+        <button id="startPauseBtn">Start</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div class="controls">
+        <span id="generation">Generation: 0</span>
+      </div>
+
+      <canvas id="gameCanvas"></canvas>
+    </main>
+  </div>
+
+  <script type="module" src="./src/game.js"></script>
+</body>
+</html>
